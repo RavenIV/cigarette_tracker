@@ -20,7 +20,6 @@ class User(Base):
     cigarettes = relationship(
         "Cigarette",
         back_populates="smoker",
-        order_by="Cigarette.smoking_time.desc()",
     )
 
 

@@ -37,6 +37,7 @@ def get_user_cigarettes(db: Session, user_id: int, limit: int = 2):
     return (
         db.query(models.Cigarette)
         .filter(models.Cigarette.smoker_id == user_id)
+        .order_by(models.Cigarette.smoking_time.desc())
         .limit(limit)
         .all()
     )

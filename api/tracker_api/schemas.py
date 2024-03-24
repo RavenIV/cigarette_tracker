@@ -28,6 +28,7 @@ class UserCreate(UserBase):
 
 class UserDetail(UserBase):
     id: int
+    date_joined: datetime
     cigarettes: list[Cigarette]
 
     class Config:
@@ -36,6 +37,7 @@ class UserDetail(UserBase):
 
 class UserList(UserBase):
     id: int
+    date_joined: datetime
 
     class Config:
         orm_mode = True
