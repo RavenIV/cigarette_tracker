@@ -3,11 +3,12 @@ from datetime import datetime
 from aiogram import Dispatcher, F, types
 from aiogram.filters import CommandStart
 
+from config import API_HOST
 from handlers.api import BotAPI
 from handlers.utils import get_next_smoking_time, localize_time
 
-api = BotAPI()
 dp = Dispatcher()
+api = BotAPI(API_HOST)
 
 START_MESSAGE = (
     'Привет, {}! 👋🏻\n\n'

@@ -1,18 +1,14 @@
 import asyncio
 import logging
 import sys
-import os
 
 from aiogram import Bot
 from aiogram.enums import ParseMode
-from dotenv import load_dotenv
+
+from config import TOKEN
 
 from handlers.actions import dp
 
-
-load_dotenv()
-
-TOKEN = os.getenv('TELEGRAM_TOKEN')
 
 if not TOKEN:
     raise UnboundLocalError('Отсутствует TELEGRAM_TOKEN.')
