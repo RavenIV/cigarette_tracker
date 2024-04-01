@@ -51,20 +51,15 @@ class BotAPI:
         url = URL_USERS.format(host=self.host)
         return self.post_api_answer(url, {'telegram_id': telegram_id})
 
-    def get_user_id(self, telegram_id: int) -> int:
-        """Найти id пользователя в базе по telegram_id."""
-        return self.get_api_answer(
+    def get_or_create_user_id(self, telegram_id: int) -> int:
+        """Найти или добавить пользователя по telegram_id и получить его id."""
+        data = self.get_api_answer(
             URL_USERS.format(host=self.host),
             {'telegram_id': telegram_id}
-        )[0]['id']
-
-    def get_or_create_user_id(self, telegram_id: int) -> int:
-        """
-        Найти или добавить пользователя по telegram_id и получить его id.
-        """
-        id = self.get_user_id(telegram_id)
-        if not id:
-            id = self.add_user(telegram_id).json()[0]['id']
+        )
+        if data:
+            return data[0]['id']
+        id = self.add_user(telegram_id).json()[0]['id']
         return id
 
     def add_user_cigarette(self, telegram_id: int,
