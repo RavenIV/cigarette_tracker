@@ -78,5 +78,5 @@ python bot.py
 
 ## Авторы:
 
-- концепция, ревью: Николай Иванцов [GitHub](https://github.com/mikolainer) 
-- разработка: Ирина Воронцова [GitHub](https://github.com/RavenIV)
+- концепция, ревью - Николай Иванцов [GitHub](https://github.com/mikolainer) 
+- разработка - Ирина Воронцова [GitHub](https://github.com/RavenIV)
