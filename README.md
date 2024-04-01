@@ -31,49 +31,12 @@ git clone <ssh link>
 cd cigarette_tracker/
 ```
 
-Создать образ и запустить контейнер API сервиса из директории api/:
+Создать файл .env в директории bot/ и указать токен бота в переменной TELEGRAM_TOKEN. 
+
+Запустить контейнеры:
 
 ```
-сd api/
-```
-```
-docker build -t myimage .
-```
-```
-docker run -d --name mycontainer -p 80:80 myimage
-```
-
-Перейти в директорию bot/, создать и активировать виртуальное окружение, установить зависимости:
-
-```
-cd ../bot/
-```
-```
-python -m venv venv
-```
-
-- Для пользователей mac/Linux
-
-  ```
-  source venv/bin/activate/
-  ```
-  
-- Для пользователей Windows
-
-  ```
-  source env/scripts/activate
-  ```
-
-```
-pip install -r requirements.txt
-```
-
-Создать файл .env в директории bot/ и указать токен бота в переменной TELEGRAM_TOKEN
-
-Запустить бота:
-
-```
-python bot.py
+docker compose up
 ```
 
 ## Авторы:

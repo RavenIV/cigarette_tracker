@@ -43,6 +43,7 @@ async def start_handler(message: types.Message) -> None:
         keyboard=kb,
         resize_keyboard=True,
     )
+    api.add_user(message.from_user.id)
     await message.answer(
         START_MESSAGE.format(message.from_user.first_name),
         reply_markup=keyboard
